@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SuperAção</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome (free CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="bg-white">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full bg-purple-600 shadow-md  h-[80px] md:h-[80px] z-50 ">
+    <div class="max-w-[1400px] mx-auto h-full px-4 flex items-center justify-between">
+
+      <!-- Left: logo + icons -->
+      <div class="flex items-center gap-3 md:gap-4">
+        <p class="font-bold text-white text-[20px]">SuperAção</p>
+
+        <!-- social icons - always visible -->
+        <a href="https://instagram.com/anafuzineli" class="text-white text-2xl hover:text-purple-200">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://github.com/" class="text-white text-2xl hover:text-purple-200">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+
+      <!-- Desktop nav (hidden on small) -->
+      <nav class="hidden md:flex items-center lg:gap-[600px] gap-6">
+        <div class="flex items-center gap-6">
+          <a href="#herosection" class="text-white text-[15px] transform duration-500 hover:scale-110">Início</a>
+          <a href="#aboutussection" class="text-white text-[15px] transform duration-500 hover:scale-110">Sobre Nós</a>
+          <a href="#analusection" class="text-white text-[15px] transform duration-500 hover:scale-110">Ana Lu</a>
+          <a href="#missionsection" class="text-white text-[15px] transform duration-500 hover:scale-110">Missão e Valores</a>
+          <a href="#metodologysection" class="text-white text-[15px] transform duration-500 hover:scale-110">Conheça a Metodologia</a>
+        </div>
+      </nav>
+
+      <!-- Mobile hamburger (visible on small) -->
+      <button id="menuBtn" class="md:hidden text-white text-2xl focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobileMenu" class="md:hidden hidden bg-purple-600 px-4 pb-4">
+      <div class="flex flex-col gap-3 pt-4">
+        <a href="#herosection" class="text-white text-lg py-2 hover:text-cyan-200">Início</a>
+        <a href="#aboutussection" class="text-white text-lg py-2 hover:text-cyan-200">Sobre Nós</a>
+        <a href="#analusection" class="text-white text-lg py-2 hover:text-cyan-200">Ana Lu</a>
+        <a href="#missionsection" class="text-white text-lg py-2 hover:text-cyan-200">Missão e Valores</a>
+        <a href="#metodologysection" class="text-white text-lg py-2 hover:text-cyan-200">Conheça a Metodologia</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- JS for toggling mobile menu -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Auto-close mobile menu when a link is clicked 
+    const links = mobileMenu.querySelectorAll("a");
+    links.forEach( link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        })
+    })
+  </script>
+
+  <!-- MAIN -->
+  <main class="flex flex-col items-center justify-center mt-10 gap-24 pb-24 max-w-[1400px] mx-auto px-4">
+
+    <!-- Hero: stack on small, row on large -->
+    <section id="herosection" class="w-full flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-20 text-center lg:text-left mt-[100px]">
+      <div class="flex flex-col items-center lg:items-start">
+        <span class="font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 text-[48px] md:text-[80px]">SuperAção</span>
+        <p class="text-purple-500 text-[24px] md:text-[40px] font-bold mt-2">Desenvolvendo Soft Skills</p>
+        <p class="text-purple-500 text-[24px] md:text-[40px] font-bold">para crianças com deficiências físicas</p>
+
+        <div class="flex gap-4 mt-5">
+          <button class="bg-purple-500 text-white px-4 py-2 rounded shadow-md transform transition hover:scale-105">Veja Metodologias</button>
+          <button class="bg-cyan-400 text-white px-4 py-2 rounded shadow-md transform transition hover:scale-105">Conheça a Ana Lu</button>
+        </div>
+      </div>
+
+      <img src="../static/assets/analu.png" alt="AnaLu" class="w-[220px] md:w-[350px] lg:w-[400px] object-cover" />
+    </section>
+
+    <!-- About us -->
+    <section id="aboutussection" class="w-full bg-gradient-to-r from-purple-600 to-cyan-300 rounded-[40px] pb-16 pt-8 px-6">
+      <h1 class="text-white text-[36px] md:text-[60px] font-bold text-center md:text-left mb-4">Sobre Nós</h1>
+
+      <article class="text-white text-[16px] md:text-[22px] font-bold leading-relaxed text-center md:text-left max-w-[1100px] mx-auto">
+        A SuperAção é uma iniciativa que nasce ao tomarmos conta em relação a importância
+        de valorizar as necessidades emocionais de crianças portadoras de deficiências físico-motoras,
+        tendo como o foco a sua inserção no ambiente diário escolar.
+        Para isso, desenvolvemos trilhas gamificadas de aprendizados baseadas nos desafios enfrentados
+        pelas crianças portadoras de Paralisia Cerebral, Esclerose Lateral Armiotrófica, Síndrome de Duchenne
+        e aquelas que sofreram de AVC( Acidente Vascular Cerebral ).
+      </article>
+
+      <!-- Hopscotch -->
+      <div class="flex flex-col items-center mt-12 gap-8">
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="text-white font-bold bg-red-600 px-6 py-6 rounded shadow-md transform transition hover:scale-110">Entendimento</button>
+          <button class="text-white font-bold bg-yellow-400 px-6 py-6 rounded shadow-md transform transition hover:scale-110">Brincadeiras</button>
+          <button class="text-white font-bold bg-orange-400 px-6 py-6 rounded shadow-md transform transition hover:scale-110">Inclusão</button>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <button class="text-white font-bold bg-blue-600 px-6 py-6 rounded shadow-md transform transition hover:scale-110">Conteúdo</button>
+          <button class="text-white font-bold bg-purple-600 px-6 py-6 rounded shadow-md transform transition hover:scale-110">Lógica e Desafios</button>
+        </div>
+
+        <button class="text-white font-bold bg-green-400 px-8 py-6 rounded shadow-md transform transition hover:scale-110">Aprendizado</button>
+
+      </div>
+
+      <!-- AnaLu subsection -->
+      <div id="analusection" class="mt-10 flex flex-col lg:flex-row items-center justify-center gap-8">
+        <div class="max-w-[700px] text-center lg:text-left">
+          <h2 class="text-white text-[36px] md:text-[48px] font-bold mb-3">Conheça a Ana Lu</h2>
+          <p class="text-white text-[16px] md:text-[20px] font-bold leading-relaxed">
+            A SuperAção conta com uma ajudante muito especial, a robozinha Ana Luisa
+            a quem seu filho(a) poderá chamar de AnaLu!
+            Durante cada módulo de aprendizagem, ela será seu principal apoio nessa jornada,
+            promovendo dicas e jogos de maneira lúdica de maneira a aumentar o aprendizado de seu filho(a).
+          </p>
+        </div>
+
+        <img src="../static/assets/analu.png" alt="AnaLu" class="w-[180px] md:w-[250px] lg:w-[300px] object-cover" />
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section id="missionsection" class="w-full px-4 text-center">
+      <h2 class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 font-bold text-[48px] md:text-[80px]">Missão e Valores</h2>
+
+      <div class="mt-6 space-y-3">
+        <p class="text-purple-500 text-[20px] md:text-[30px] font-bold">Nossa missão é promover o desenvolvimento pessoal</p>
+        <p class="text-purple-500 text-[20px] md:text-[30px] font-bold">e emocional de crianças portadoras de Deficiências Físicas.</p>
+        <p class="text-purple-500 text-[20px] md:text-[30px] font-bold">Acreditamos que a educação deve superar todas as barreiras.</p>
+        <p class="text-purple-500 text-[20px] md:text-[30px] font-bold">Venha para a SuperAção!</p>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="metodologysection" class="w-full px-4 text-center">
+      <h2 class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-300 font-bold text-[48px] md:text-[80px]">Conheça nossa metodologia</h2>
+
+      <div class="mt-8 flex flex-col lg:flex-row items-center justify-center gap-8">
+        <!-- Card 1 -->
+        <div class="w-[300px] h-[400px] bg-purple-400 shadow-md rounded-[20px] flex flex-col items-center p-4 transform transition hover:scale-105">
+          <div class="bg-cyan-300 w-full p-3 rounded-[20px] font-bold text-gray-900/70">
+            Você está montando brinquedos no seu tempo, mas percebe que seus amigos estão mais rápidos.
+            Com você fala sobre isso para continuar se divertindo com eles? Aqui, procuramos entender o ritmo e velocidade de aprendizado para que possamos avançar de uma melhor maneira.
+          </div>
+          <p class="font-bold text-[20px] mt-4">Ritmos Diferentes</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="w-[300px] h-[400px] bg-blue-300 shadow-md rounded-[20px] flex flex-col items-center p-4 transform transition hover:scale-105">
+          <div class="bg-cyan-300 w-full p-3 rounded-[20px] font-bold text-gray-900/70">
+            Você está brincando no parquinho e seus amigos te chamam para subir num lugar mais alto, ou correr muito rápido, como vocês podem encontrar outras maneiras de brincar? Na SuperAção, entendemos que cada indivíduo tem seu próprio tempo.
+          </div>
+          <p class="font-bold text-[20px] mt-4">Minhas diferenças <br> são especiais!</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="w-[300px] h-[400px] bg-red-300 shadow-md rounded-[20px] flex flex-col items-center p-4 transform transition hover:scale-105">
+          <div class="bg-cyan-300 w-full p-3 rounded-[20px] font-bold text-gray-900/70">
+            Todos estão desenhando, mas suas mãos não conseguem desenhar como antes é mais difícil!
+            Como você pode pedir ajuda para continuar com seu desenho? A Ana Lu te auxilia totalmente em suas divertidas trilhas.
+          </div>
+          <p class="font-bold text-[20px] mt-4">Me dá uma mãozinha?</p>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <p class="text-purple-500 font-bold text-[18px] md:text-[20px]">Esquema de cards em que na fase superior estão contidas situações desafiadoras,</p>
+        <p class="text-purple-500 font-bold text-[18px] md:text-[20px]">cujas possíveis soluções serão elaboradas pela criança , baseado em estudos em TCC</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-white border-t-2">
+    <div class="max-w-[1400px] mx-auto px-6 py-10 flex flex-col lg:flex-row items-center justify-between gap-6">
+      <div class="flex flex-col items-center lg:items-start">
+        <p class="text-gray-500 text-[26px] font-bold hover:text-purple-500">SuperAção</p>
+        <div class="flex gap-4 mt-2">
+          <a href="https://instagram.com/anafuzineli" class="text-gray-500 text-2xl hover:text-purple-500"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/" class="text-gray-500 text-2xl hover:text-purple-500"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-12">
+        <div class="flex flex-col gap-1 text-center lg:text-left">
+          <h3 class="font-semibold text-[18px] text-gray-700">Blog</h3>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">Notícias</a>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">Artigos</a>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">Atualizações</a>
+        </div>
+
+        <div class="flex flex-col gap-1 text-center lg:text-left">
+          <h3 class="font-semibold text-[18px] text-gray-700">Ajuda</h3>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">Suporte</a>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">Contato</a>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">FAQs</a>
+        </div>
+
+        <div class="flex flex-col gap-1 text-center lg:text-left">
+          <h3 class="font-semibold text-[18px] text-gray-700">Comunidade</h3>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">Fórum</a>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">Eventos</a>
+          <a class="text-gray-500 hover:text-purple-500 cursor-pointer">Discord</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full flex justify-center py-4 text-gray-500 text-sm">© 2025 SuperAção — All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
